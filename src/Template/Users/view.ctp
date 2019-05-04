@@ -17,28 +17,28 @@
     <h3><?= h($user->userID) ?></h3>
     <table class="vertical-table">
         <tr>
+            <th scope="row"><?= __('Username') ?></th>
+            <td><?= h($user->username) ?></td>
+        </tr>
+        <tr>
             <th scope="row"><?= __('Password') ?></th>
-            <td><?= h($user->Password) ?></td>
-        </tr>
-        <tr>
-            <th scope="row"><?= __('Name') ?></th>
-            <td><?= h($user->Name) ?></td>
-        </tr>
-        <tr>
-            <th scope="row"><?= __('Phone') ?></th>
-            <td><?= h($user->Phone) ?></td>
+            <td><?= h($user->password) ?></td>
         </tr>
         <tr>
             <th scope="row"><?= __('Email') ?></th>
-            <td><?= h($user->Email) ?></td>
-        </tr>
-        <tr>
-            <th scope="row"><?= __('Address') ?></th>
-            <td><?= h($user->Address) ?></td>
+            <td><?= h($user->email) ?></td>
         </tr>
         <tr>
             <th scope="row"><?= __('Role') ?></th>
             <td><?= h($user->role) ?></td>
+        </tr>
+        <tr>
+            <th scope="row"><?= __('Phone') ?></th>
+            <td><?= h($user->phone) ?></td>
+        </tr>
+        <tr>
+            <th scope="row"><?= __('Address') ?></th>
+            <td><?= h($user->address) ?></td>
         </tr>
         <tr>
             <th scope="row"><?= __('UserID') ?></th>

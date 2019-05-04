@@ -21,12 +21,12 @@
     <fieldset>
         <legend><?= __('Edit User') ?></legend>
         <?php
-            echo $this->Form->control('Password');
-            echo $this->Form->control('Name');
-            echo $this->Form->control('Phone');
-            echo $this->Form->control('Email');
-            echo $this->Form->control('Address');
+            echo $this->Form->control('username');
+            echo $this->Form->control('password');
+            echo $this->Form->control('email');
             echo $this->Form->control('role');
+            echo $this->Form->control('phone');
+            echo $this->Form->control('address');
             echo $this->Form->control('authorID');
         ?>
     </fieldset>

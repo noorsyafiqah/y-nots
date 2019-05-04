@@ -48,40 +48,33 @@ class UsersTable extends Table
             ->allowEmptyString('userID', 'create');
 
         $validator
-            ->scalar('Password')
-            ->maxLength('Password', 20)
-            ->requirePresence('Password', 'create')
-            ->allowEmptyString('Password', false);
+            ->scalar('username')
+            ->maxLength('username', 200)
+            ->allowEmptyString('username');
 
         $validator
-            ->scalar('Name')
-            ->maxLength('Name', 200)
-            ->requirePresence('Name', 'create')
-            ->allowEmptyString('Name', false);
+            ->scalar('password')
+            ->maxLength('password', 200)
+            ->allowEmptyString('password');
 
         $validator
-            ->scalar('Phone')
-            ->maxLength('Phone', 200)
-            ->requirePresence('Phone', 'create')
-            ->allowEmptyString('Phone', false);
-
-        $validator
-            ->scalar('Email')
-            ->maxLength('Email', 200)
-            ->requirePresence('Email', 'create')
-            ->allowEmptyString('Email', false);
-
-        $validator
-            ->scalar('Address')
-            ->maxLength('Address', 200)
-            ->requirePresence('Address', 'create')
-            ->allowEmptyString('Address', false);
+            ->email('email')
+            ->allowEmptyString('email');
 
         $validator
             ->scalar('role')
             ->maxLength('role', 200)
-            ->requirePresence('role', 'create')
-            ->allowEmptyString('role', false);
+            ->allowEmptyString('role');
+
+        $validator
+            ->scalar('phone')
+            ->maxLength('phone', 200)
+            ->allowEmptyString('phone');
+
+        $validator
+            ->scalar('address')
+            ->maxLength('address', 200)
+            ->allowEmptyString('address');
 
         $validator
             ->integer('authorID')
@@ -89,5 +82,20 @@ class UsersTable extends Table
             ->allowEmptyString('authorID', false);
 
         return $validator;
+    }
+
+    /**
+     * Returns a rules checker object that will be used for validating
+     * application integrity.
+     *
+     * @param \Cake\ORM\RulesChecker $rules The rules object to be modified.
+     * @return \Cake\ORM\RulesChecker
+     */
+    public function buildRules(RulesChecker $rules)
+    {
+        $rules->add($rules->isUnique(['username']));
+        $rules->add($rules->isUnique(['email']));
+
+        return $rules;
     }
 }

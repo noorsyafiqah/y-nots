@@ -16,12 +16,12 @@
         <thead>
             <tr>
                 <th scope="col"><?= $this->Paginator->sort('userID') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('Password') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('Name') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('Phone') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('Email') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('Address') ?></th>
+                <th scope="col"><?= $this->Paginator->sort('username') ?></th>
+                <th scope="col"><?= $this->Paginator->sort('password') ?></th>
+                <th scope="col"><?= $this->Paginator->sort('email') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('role') ?></th>
+                <th scope="col"><?= $this->Paginator->sort('phone') ?></th>
+                <th scope="col"><?= $this->Paginator->sort('address') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('authorID') ?></th>
                 <th scope="col" class="actions"><?= __('Actions') ?></th>
             </tr>
@@ -30,12 +30,12 @@
             <?php foreach ($users as $user): ?>
             <tr>
                 <td><?= $this->Number->format($user->userID) ?></td>
-                <td><?= h($user->Password) ?></td>
-                <td><?= h($user->Name) ?></td>
-                <td><?= h($user->Phone) ?></td>
-                <td><?= h($user->Email) ?></td>
-                <td><?= h($user->Address) ?></td>
+                <td><?= h($user->username) ?></td>
+                <td><?= h($user->password) ?></td>
+                <td><?= h($user->email) ?></td>
                 <td><?= h($user->role) ?></td>
+                <td><?= h($user->phone) ?></td>
+                <td><?= h($user->address) ?></td>
                 <td><?= $this->Number->format($user->authorID) ?></td>
                 <td class="actions">
                     <?= $this->Html->link(__('View'), ['action' => 'view', $user->userID]) ?>
