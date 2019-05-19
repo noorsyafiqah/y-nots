@@ -8,6 +8,10 @@
     <ul class="side-nav">
         <li class="heading"><?= __('Actions') ?></li>
         <li><?= $this->Html->link(__('New Invoice'), ['action' => 'add']) ?></li>
+                <li><a href="Users" target="_blank">Users</a></li>
+        <li><a href="Bookstores" target="_blank">Bookstores</a></li>
+        <li><a href="Books" target="_blank">Books</a></li>
+        <li><a href="Stocks" target="_blank">Stocks</a> </li>
     </ul>
 </nav>
 <div class="invoices index large-9 medium-8 columns content">

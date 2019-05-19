@@ -31,6 +31,8 @@ class BooksTable extends Table
         parent::initialize($config);
 
         $this->setTable('books');
+        $this->setDisplayField('isbn');
+        $this->setPrimaryKey('isbn');
     }
 
     /**
@@ -43,8 +45,7 @@ class BooksTable extends Table
     {
         $validator
             ->integer('isbn')
-            ->requirePresence('isbn', 'create')
-            ->allowEmptyString('isbn', false);
+            ->allowEmptyString('isbn', 'create');
 
         $validator
             ->scalar('Title')
@@ -57,9 +58,9 @@ class BooksTable extends Table
             ->allowEmptyString('Genre');
 
         $validator
-            ->dateTime('PublishYear')
+            ->date('PublishYear')
             ->requirePresence('PublishYear', 'create')
-            ->allowEmptyDateTime('PublishYear', false);
+            ->allowEmptyDate('PublishYear', false);
 
         $validator
             ->decimal('Price')
@@ -69,8 +70,28 @@ class BooksTable extends Table
         $validator
             ->integer('AuthorID')
             ->requirePresence('AuthorID', 'create')
-            ->allowEmptyString('AuthorID', false);
+            ->allowEmptyString('AuthorID', false)
+            ->add('AuthorID', 'unique', ['rule' => 'validateUnique', 'provider' => 'table']);
+
+        $validator
+            ->integer('userID')
+            ->requirePresence('userID', 'create')
+            ->allowEmptyString('userID', false);
 
         return $validator;
+    }
+
+    /**
+     * Returns a rules checker object that will be used for validating
+     * application integrity.
+     *
+     * @param \Cake\ORM\RulesChecker $rules The rules object to be modified.
+     * @return \Cake\ORM\RulesChecker
+     */
+    public function buildRules(RulesChecker $rules)
+    {
+        $rules->add($rules->isUnique(['AuthorID']));
+
+        return $rules;
     }
 }

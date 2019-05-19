@@ -27,7 +27,6 @@
             echo $this->Form->control('role');
             echo $this->Form->control('phone');
             echo $this->Form->control('address');
-            echo $this->Form->control('authorID');
         ?>
     </fieldset>
     <?= $this->Form->button(__('Submit')) ?>

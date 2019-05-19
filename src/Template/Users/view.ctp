@@ -11,6 +11,7 @@
         <li><?= $this->Form->postLink(__('Delete User'), ['action' => 'delete', $user->userID], ['confirm' => __('Are you sure you want to delete # {0}?', $user->userID)]) ?> </li>
         <li><?= $this->Html->link(__('List Users'), ['action' => 'index']) ?> </li>
         <li><?= $this->Html->link(__('New User'), ['action' => 'add']) ?> </li>
+
     </ul>
 </nav>
 <div class="users view large-9 medium-8 columns content">
@@ -43,10 +44,6 @@
         <tr>
             <th scope="row"><?= __('UserID') ?></th>
             <td><?= $this->Number->format($user->userID) ?></td>
-        </tr>
-        <tr>
-            <th scope="row"><?= __('AuthorID') ?></th>
-            <td><?= $this->Number->format($user->authorID) ?></td>
         </tr>
     </table>
 </div>

@@ -22,7 +22,6 @@ class UsersFixture extends TestFixture
         'role' => ['type' => 'string', 'length' => 200, 'null' => true, 'default' => null, 'collate' => 'utf32_general_ci', 'comment' => '', 'precision' => null, 'fixed' => null],
         'phone' => ['type' => 'string', 'length' => 200, 'null' => true, 'default' => null, 'collate' => 'utf32_general_ci', 'comment' => '', 'precision' => null, 'fixed' => null],
         'address' => ['type' => 'string', 'length' => 200, 'null' => true, 'default' => null, 'collate' => 'utf32_general_ci', 'comment' => '', 'precision' => null, 'fixed' => null],
-        'authorID' => ['type' => 'integer', 'length' => 20, 'unsigned' => false, 'null' => false, 'default' => null, 'comment' => '', 'precision' => null, 'autoIncrement' => null],
         '_constraints' => [
             'primary' => ['type' => 'primary', 'columns' => ['userID'], 'length' => []],
         ],
@@ -47,8 +46,7 @@ class UsersFixture extends TestFixture
                 'email' => 'Lorem ipsum dolor sit amet',
                 'role' => 'Lorem ipsum dolor sit amet',
                 'phone' => 'Lorem ipsum dolor sit amet',
-                'address' => 'Lorem ipsum dolor sit amet',
-                'authorID' => 1
+                'address' => 'Lorem ipsum dolor sit amet'
             ],
         ];
         parent::init();

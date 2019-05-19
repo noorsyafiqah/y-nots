@@ -76,11 +76,6 @@ class UsersTable extends Table
             ->maxLength('address', 200)
             ->allowEmptyString('address');
 
-        $validator
-            ->integer('authorID')
-            ->requirePresence('authorID', 'create')
-            ->allowEmptyString('authorID', false);
-
         return $validator;
     }
 

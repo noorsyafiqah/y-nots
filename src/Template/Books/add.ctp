@@ -20,6 +20,7 @@
             echo $this->Form->control('PublishYear');
             echo $this->Form->control('Price');
             echo $this->Form->control('AuthorID');
+            echo $this->Form->control('userID');
         ?>
     </fieldset>
     <?= $this->Form->button(__('Submit')) ?>

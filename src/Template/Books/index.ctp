@@ -8,6 +8,10 @@
     <ul class="side-nav">
         <li class="heading"><?= __('Actions') ?></li>
         <li><?= $this->Html->link(__('New Book'), ['action' => 'add']) ?></li>
+        <li><a href="Users" target="_blank">Users</a></li>
+        <li><a href="Bookstores" target="_blank">Bookstores</a></li>
+        <li><a href="Invoices" target="_blank">Invoices</a></li>
+        <li><a href="Stocks" target="_blank">Stocks</a> </li>
     </ul>
 </nav>
 <div class="books index large-9 medium-8 columns content">
@@ -21,6 +25,7 @@
                 <th scope="col"><?= $this->Paginator->sort('PublishYear') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('Price') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('AuthorID') ?></th>
+                <th scope="col"><?= $this->Paginator->sort('userID') ?></th>
                 <th scope="col" class="actions"><?= __('Actions') ?></th>
             </tr>
         </thead>
@@ -33,6 +38,7 @@
                 <td><?= h($book->PublishYear) ?></td>
                 <td><?= $this->Number->format($book->Price) ?></td>
                 <td><?= $this->Number->format($book->AuthorID) ?></td>
+                <td><?= $this->Number->format($book->userID) ?></td>
                 <td class="actions">
                     <?= $this->Html->link(__('View'), ['action' => 'view', $book->isbn]) ?>
                     <?= $this->Html->link(__('Edit'), ['action' => 'edit', $book->isbn]) ?>

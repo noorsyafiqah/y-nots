@@ -37,6 +37,10 @@
             <td><?= $this->Number->format($book->AuthorID) ?></td>
         </tr>
         <tr>
+            <th scope="row"><?= __('UserID') ?></th>
+            <td><?= $this->Number->format($book->userID) ?></td>
+        </tr>
+        <tr>
             <th scope="row"><?= __('PublishYear') ?></th>
             <td><?= h($book->PublishYear) ?></td>
         </tr>

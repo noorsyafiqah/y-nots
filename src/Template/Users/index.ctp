@@ -8,6 +8,10 @@
     <ul class="side-nav">
         <li class="heading"><?= __('Actions') ?></li>
         <li><?= $this->Html->link(__('New User'), ['action' => 'add']) ?></li>
+        <li><a href="Bookstores" target="_blank">Bookstores</a></li>
+        <li><a href="Books" target="_blank">Books</a></li>
+        <li><a href="Invoices" target="_blank">Invoices</a></li>
+        <li><a href="Stocks" target="_blank">Stocks</a> </li>
     </ul>
 </nav>
 <div class="users index large-9 medium-8 columns content">
@@ -22,7 +26,6 @@
                 <th scope="col"><?= $this->Paginator->sort('role') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('phone') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('address') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('authorID') ?></th>
                 <th scope="col" class="actions"><?= __('Actions') ?></th>
             </tr>
         </thead>
@@ -36,7 +39,6 @@
                 <td><?= h($user->role) ?></td>
                 <td><?= h($user->phone) ?></td>
                 <td><?= h($user->address) ?></td>
-                <td><?= $this->Number->format($user->authorID) ?></td>
                 <td class="actions">
                     <?= $this->Html->link(__('View'), ['action' => 'view', $user->userID]) ?>
                     <?= $this->Html->link(__('Edit'), ['action' => 'edit', $user->userID]) ?>

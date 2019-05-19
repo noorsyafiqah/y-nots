@@ -9,9 +9,10 @@ use Cake\ORM\Entity;
  * @property int $isbn
  * @property string|null $Title
  * @property string|null $Genre
- * @property \Cake\I18n\FrozenTime $PublishYear
+ * @property \Cake\I18n\FrozenDate $PublishYear
  * @property float $Price
  * @property int $AuthorID
+ * @property int $userID
  */
 class Book extends Entity
 {
@@ -25,11 +26,11 @@ class Book extends Entity
      * @var array
      */
     protected $_accessible = [
-        'isbn' => true,
         'Title' => true,
         'Genre' => true,
         'PublishYear' => true,
         'Price' => true,
-        'AuthorID' => true
+        'AuthorID' => true,
+        'userID' => true
     ];
 }
